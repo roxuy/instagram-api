@@ -1,0 +1,14 @@
+Version 1.0.0
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [x.x.x] - 2022-12-29
+
+### Added
+
+- Git ignore file.
+- Postgres db config.
+- Gems: Annotate, brakeman, rails_best_practices, rspec, rubocop.
+
+### 
