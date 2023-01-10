@@ -241,7 +241,6 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
-  devise
   devise_token_auth
   pg (~> 1.1)
   puma (~> 5.0)
