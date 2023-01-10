@@ -55,3 +55,5 @@ group :development do
   gem 'brakeman'
   gem 'rails_best_practices'
 end
+
+gem "rack-cors", "~> 1.1"
