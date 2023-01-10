@@ -18,3 +18,5 @@ This project is part of my portfolio. <b>It's from my own</b> :blush:, it's not 
 * brakeman
 * annotate
 * rspec
+* devise
+* devise_token_auth

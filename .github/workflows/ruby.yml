@@ -9,6 +9,9 @@
 
 name: Ruby CI
 
+env:
+  RAILS_ENV: test
+
 on: [push, pull_request]
 
 jobs:
@@ -22,8 +25,8 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: admin1
-          POSTGRES_PASSWORD: admin1
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
@@ -32,6 +35,11 @@ jobs:
         uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
       - name: Install dependencies
         run: bundle install
+      - name: Setup Database
+        run: |
+          cp .github/database.yml config/database.yml
+          bundle exec rake db:create
+          bundle exec rake db:schema:load  
       - name: Run tests
         run: bundle exec rake
       - name: Formatting and Security Checks
