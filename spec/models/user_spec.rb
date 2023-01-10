@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -12,6 +14,3 @@
 #  updated_at             :datetime         not null
 #
 require 'rails_helper'
-
-RSpec.describe User, type: :model do
-end
