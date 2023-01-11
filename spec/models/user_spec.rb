@@ -38,13 +38,13 @@ RSpec.describe User, type: :model do
     expect(user).to be_invalid
   end
 
-  context 'is not valid with already registered email' do
-    let(:user2) { create :user}
-    let(:new_user) { build :user, email: user2.email} 
+  context 'when email is already registered' do
+    let(:user2) { create :user }
+    let(:new_user) { build :user, email: user2.email }
 
-    it 'should return invalid email' do
+    it 'returns invalid email' do
       expect(new_user).to be_invalid
-    end  
+    end
   end
 
   it 'is not valid with blank fullname' do
@@ -52,12 +52,12 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
   end
 
-  context 'is not valid with already taken username' do 
-    let(:new_user) {create :user}
-    let(:new_user2) { build :user, email: new_user.username}  
+  context 'when username is already taken' do
+    let(:new_user) { create :user }
+    let(:new_user2) { build :user, email: new_user.username }
 
-    it 'should return invalid username' do 
+    it 'returns invalid username' do
       expect(new_user2).not_to be_valid
-    end  
+    end
   end
 end
