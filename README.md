@@ -1,6 +1,7 @@
 ## Instagram API clone
 
-This project is part of my portfolio. <b>It's from my own</b> :blush:, it's not from a followed tutorial project. It combines the most used gems :gem: and the latest version of Ruby on Rails. To organice myself I created a Trello board -> https://trello.com/b/QWHtIUYb/instagram-clone
+This project is part of my portfolio. <b>It's from my own</b> :blush:, it's not from a followed tutorial project. It combines the most used gems :gem: and the latest version of Ruby on Rails. 
+To organice myself I created a Trello board -> https://trello.com/b/QWHtIUYb/instagram-clone
 
 ### System dependencies
 * Ruby version: 3.1.2
@@ -18,4 +19,6 @@ This project is part of my portfolio. <b>It's from my own</b> :blush:, it's not 
 * brakeman
 * annotate
 * rspec
+* factory_bot
+* faker
 * devise_token_auth
