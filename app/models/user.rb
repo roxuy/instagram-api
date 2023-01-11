@@ -24,8 +24,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
-class User < ActiveRecord::Base
-  extend Devise::Models #Not remove
+class User < ApplicationRecord
+  extend Devise::Models # Not remove
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -34,6 +34,6 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-  validates :fullname, presence: true 
-  validates :username, presence: true, uniqueness: true                 
+  validates :fullname, presence: true
+  validates :username, presence: true, uniqueness: true
 end
