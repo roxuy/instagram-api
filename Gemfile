@@ -37,8 +37,6 @@ gem 'bootsnap', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
-
-gem 'devise'
 gem 'devise_token_auth'
 gem 'rubocop', '~> 1.41', require: false
 gem 'rubocop-rails', require: false
@@ -47,6 +45,8 @@ gem 'rubocop-rspec', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'rspec-rails', '~> 6.0.0'
 end
 
@@ -57,3 +57,5 @@ group :development do
   gem 'brakeman'
   gem 'rails_best_practices'
 end
+
+gem 'rack-cors', '~> 1.1'
