@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe 'POST /users/sign_in', type: :request do
-  subject { post user_session_path, params:, as: :json }
+  subject(:post) { post user_session_path, params:, as: :json }
 
   let(:user) { create(:user) }
   let(:params) do
@@ -15,15 +15,18 @@ describe 'POST /users/sign_in', type: :request do
 
   context 'with correct params' do
     before do
-      subject
+      post
     end
 
     it 'returns successful response' do
       expect(response).to be_successful
     end
 
-    it 'returns access-token and client in the header of the response' do
+    it 'returns access-token in the header' do
       expect(response.has_header?('access-token')).to eq(true)
+    end
+
+    it 'returns client in the header' do
       expect(response.has_header?('client')).to eq(true)
     end
   end
@@ -37,15 +40,18 @@ describe 'POST /users/sign_in', type: :request do
     end
 
     before do
-      subject
+      post
     end
 
     it 'returns unauthorized response' do
       expect(response).to be_unauthorized
     end
 
-    it 'shouldnt return access-token and client in the header of the response' do
+    it 'shouldnt return access-token in the header' do
       expect(response.has_header?('access-token')).to eq(false)
+    end
+
+    it 'shouldnt return client in the header' do
       expect(response.has_header?('client')).to eq(false)
     end
 
