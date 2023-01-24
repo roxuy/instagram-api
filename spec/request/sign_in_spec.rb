@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe 'POST /users/sign_in', type: :request do
-  subject(:signup) { post user_session_path, params:, as: :json }
+  subject(:sign_up) { post user_session_path, params:, as: :json }
 
   let(:user) { create(:user) }
   let(:params) do
@@ -15,7 +15,7 @@ describe 'POST /users/sign_in', type: :request do
 
   context 'with correct params' do
     before do
-      signup
+      sign_up
     end
 
     it 'returns successful response' do
@@ -40,7 +40,7 @@ describe 'POST /users/sign_in', type: :request do
     end
 
     before do
-      signup
+      sign_up
     end
 
     it 'returns unauthorized response' do
