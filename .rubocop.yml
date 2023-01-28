@@ -12,3 +12,8 @@ AllCops:
     - app/mailers/application_mailer.rb
     - config/application.rb
     - spec/rails_helper.rb
+    - lib/tasks/fly.rake
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - app/controllers/users/registrations_controller.rb
